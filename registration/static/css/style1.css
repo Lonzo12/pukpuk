@@ -1,0 +1,359 @@
+@font-face{
+    font-family: "TelluralAlt.ttf";
+    src: url(../fonts/TelluralAlt.ttf);
+}
+
+@font-face{
+    font-family: "PlayfairDisplaySC.ttf";
+    src: url(../fonts/PlayfairDisplaySC-Regular.ttf);
+}
+
+@keyframes left-num {
+    0% {
+      transform: scale(0, .025);
+    }
+    50% {
+      transform: scale(1, .025);
+    }
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.prod{
+    margin-bottom: 20px;
+}
+
+.shapka{
+    background-color: #254E70;
+    
+}
+
+.shapka p{
+    color: #fff;
+}
+
+.navbar-togler{
+    z-index: 999;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+p{
+    font-family: "Tellural.ttf";
+    font-size: 24px;
+    color: black;
+    margin: 0;
+}
+
+h3{
+    font-family: "PlayfairDisplaySC.ttf";
+    font-size: 24px;
+    color: black;
+    margin: 0;
+}
+
+.zag p{
+    font-size: 54px;
+}
+
+.coli{
+    color: #ffffff;
+    font-family: "PlayfairDisplaySC.ttf";
+    text-align: center;
+    font-size: 24px;
+}
+
+.link a{
+    background-color: #F4F1DE;
+    margin-right: 50px;
+    border-radius: 10px;
+    font-family: "PlayfairDisplaySC.ttf";
+    padding: .5rem 1rem;
+    text-align: center;
+    font-size: 24px;
+}
+
+.zer{
+    transform: scale(-1,1);
+    
+}
+
+.normzer{
+    transform: scale(1,-1);
+}
+
+.zerzer{
+    transform: scale(-1,-1);
+}
+
+.info{
+    margin-top: 0;
+}
+
+.info h3{
+    font-family: "PlayfairDisplaySC";
+    font-size: 48px;
+}
+
+.info p{
+    color: #000;
+} 
+
+.inf{
+    position: relative;
+}
+
+.map{
+    border: 7px solid;
+    border-color: #254E70;
+    padding: 0;
+}
+
+.num img{
+    width: 600px;
+}
+
+.text{
+    margin-top: 70px;
+}
+
+.text p{
+    color: #000;
+    font-size: 44px;
+    justify-content: center;
+}
+
+.text h3{
+    font-size: 44px;
+    margin: 0 0;
+}
+
+.num h3{
+    font-size: 44px;
+}
+
+.card.active {
+  border: 2px solid red;
+}
+
+.container-wrapper {
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.card {
+    display: inline-block;
+    width: 300px;
+    margin-right: 20px;
+    background-color: #ddd;
+}
+
+.butn{
+    background: none;
+    color: #000;
+    font-family: "PlayfairDisplaySC";
+    border: 3px solid #254E70;
+    width: 300px;
+    height: 50px;
+    transition: background-color 0.5s ease-out;
+    font-size: 28px;
+}
+
+.num button{
+    background: none;
+    color: #000;
+    font-family: "PlayfairDisplaySC";
+    border: 3px solid #254E70;
+    width: 300px;
+    height: 50px;
+    transition: background-color 0.5s ease-out;
+    font-size: 28px;
+}
+
+.num{
+    margin: 20px 0;
+}
+
+.num button:hover{
+    background-color: #254E70;
+    color: #fff;
+    box-shadow: 0 0 5px #254E70;
+}
+
+.numr{
+    direction: rtl;
+    margin: 20px 0;
+}
+
+.numr img{
+    width: 600px;
+    
+}
+.numr button{
+    background: none;
+    color: #000;
+    font-family: "PlayfairDisplaySC";
+    border: 3px solid #254E70;
+    width: 300px;
+    height: 50px;
+    transition: background-color 0.5s ease-out;
+    font-size: 28px;
+}
+
+.numr button:hover{
+    background-color: #254E70;
+    color: #fff;
+    box-shadow: 0 0 5px #254E70;
+}
+
+.textr{
+    margin-top: 70px;
+    margin-right: 20px;
+}
+
+.textr p{
+    color: #000;
+    font-size: 48px;
+    justify-content: center;
+}
+
+.textr h3{
+    font-size: 54px;
+    margin: 0 0;
+}
+
+.photo img{
+    transition: width 0.5s ease-out;
+}
+
+.photo img:hover{
+    width: 700px;
+}
+
+.d-input{
+    width: 400px;
+    height: 40px;
+    border: 3px solid #254E70;
+    font-family: "PlayfairDisplaySC";
+    font-size: 26px;
+}
+
+.bfb{
+    margin-top: 50px;
+    background: none;
+    color: #000;
+    font-family: "PlayfairDisplaySC";
+    border: 3px solid #254E70;
+    width: 300px;
+    height: 50px;
+    transition: background-color 0.5s ease-out;
+    font-size: 28px;
+}
+
+.bfb:hover{
+    background-color: #254E70;
+    color: #fff;
+    box-shadow: 0 0 5px #254E70;
+}
+
+.d input{
+    width: 400px;
+    height: 70px;
+    border: 5px solid #254E70;
+    font-family: "PlayfairDisplaySC";
+    font-size: 26px;
+}
+
+.d h4{
+    font-family: "PlayfairDisplaySC";
+    font-size: 32px;
+    margin-top: 27px;
+}
+
+.d select{
+    width: 400px;
+    height: 70px;
+    border: 5px solid #254E70;
+    font-family: "PlayfairDisplaySC";
+    font-size: 26px;
+}
+
+.f h3{
+    font-family: "PlayfairDisplaySC";
+    font-size: 48px;
+}
+
+.bf button{
+    margin-top: 50px;
+    background: none;
+    color: #000;
+    font-family: "PlayfairDisplaySC";
+    border: 3px solid #254E70;
+    width: 300px;
+    height: 50px;
+    transition: background-color 0.5s ease-out;
+    font-size: 28px;
+}
+
+.bf button:hover{
+    background-color: #254E70;
+    color: #fff;
+    box-shadow: 0 0 5px #254E70;
+}
+
+.car{
+    height: 300px;
+    padding: 0;
+}
+
+.car p{
+    color: #000;
+}
+
+.car h5{
+    color: #000;
+}
+
+footer{
+    background-color: #254E70;
+}
+
+footer p{
+    color: #fff;
+}
+
+.form-input {
+    width: 300px;
+    font-size: 16px;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+    
+}
+
+.form-label p{
+    color: #000;
+}
+
+.form-error ul {
+    list-style: none;
+    padding: 0;
+    color: #CC0000;
+}
+
+.form-button {
+    min-width: 200px;
+    font-size: 16px;
+}

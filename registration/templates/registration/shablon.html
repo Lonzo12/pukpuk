@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru" class="html_weak">
+<head>
+    <link id="cssLink" rel="stylesheet" type="text/css" href="{% static 'css/style1.css' %}">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=1ea9d0b4-5222-42d0-bf54-316a596f9c4b&lang=ru_RU" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
+
+    <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div id="mainmenu" class="up shapka">
+    <div class="upup container">
+      <div class="row flex-wrap justify-content-lg-between align-items-center">
+        <div class="zag col-12 col-lg-3">
+          <p class="text-sm-start">МЕЧТА+</p>
+        </div>
+        <div class="phone col-12 col-lg-3 d-lg-flex justify-content-center">
+          <div>
+            <p>+7 (4212) 20-14-14</p>
+            <p>+7 (4212) 31-11-11</p>
+          </div>
+        </div>
+        <div class="eye ms-auto col-12 col-lg-3 d-lg-flex justify-content-center align-content-center">
+            <button onclick="changeCSS()" class="butn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                  <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="mail ms-auto col-12 col-lg-3 d-lg-flex justify-content-center">
+          <div id="user">
+            {% if request.user.is_authenticated %}
+                {% if user.is_staff %}
+                    <div class="row">
+                        <a class="coli" href="{% url 'aprofile' %}">{{user.username}}</a>
+                    </div>
+                    <div class="row">
+                        <a class="coli" href="{% url 'logout' %}">Выйти</a>
+                    </div>
+                {% else %}
+                    <div class="row">
+                        <a class="coli" href="{% url 'profile' %}">{{user.username}}</a>
+                    </div>
+                    <div class="row">
+                        <a class="coli" href="{% url 'logout' %}">Выйти</a>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="row">
+                    <a class="coli" href="{% url 'reg' %}">Регистрация</a>
+                </div>
+                <div class="row">
+                    <a class="coli" href="{% url 'login' %}">Авторизация</a>
+                </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: #254E70;">
+      <div class="container container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="row collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="link navbar-nav">
+              {% if request.path == '/' %}
+                    <a class="col" aria-current="page" href="#info">О нас</a>
+                    <a class="col" href="#number">Номера</a>
+                    <a class="col" href="{% url 'product_list' %}">Товары</a>
+                    <a class="col" href="#otzivi">Отзывы</a>
+                    <a class="col" href="{% url 'cart' %}">Корзина</a>
+              {% else %}
+                    <a class="col" aria-current="page" href="{% url 'index' %}">Главная</a>
+                    <a class="col" href="{% url 'index' %}#number">Номера</a>
+                    <a class="col" href="{% url 'product_list' %}">Товары</a>
+                    <a class="col" href="{% url 'index' %}#otzivi">Отзывы</a>
+                    <a class="col" href="{% url 'cart' %}">Корзина</a>
+              {% endif %}
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  {% block mainmenu %}
+
+  {% endblock mainmenu %}
+  {% block content %}
+  {% endblock %}
+<script>
+function changeCSS() {
+    var link = document.getElementById("cssLink");
+    var currentCSS = link.href;
+    var newCSS = "";
+
+    if (currentCSS.endsWith("css/style1.css")) {
+        newCSS = "{% static 'css/style2.css' %}";
+    } else {
+        newCSS = "{% static 'css/style1.css' %}";
+    }
+
+    link.href = newCSS;
+    }
+</script>
+<script src="{% static 'js/script.js' %}"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+</html>

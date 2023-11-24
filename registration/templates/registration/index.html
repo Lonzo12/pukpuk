@@ -1,0 +1,195 @@
+{% extends "registration/shablon.html" %}
+{% load static %}
+{% block title %}Мечта+{% endblock %}
+{% block content %}
+
+<section class="info" id="info">
+    <div class="d-flex">
+        <div>
+            <img src="{% static 'image/tri.png' %}" alt="" class="norm">
+        </div>
+        <div class="ms-auto">
+            <img src="{% static 'image/tri.png' %}" alt="" class="zer">
+        </div>
+    </div>
+    <div class = "container">
+        <h3>О НАС</h3>
+        <p class="inf">Гостиница "Мечта+" - отличное место для тех, кто ценит комфорт, но хочет сэкономить на проживании. Наши номера прекрасно подойдут как для одного путешественника, так и для пары или семьи. Здесь вы найдете все необходимое для приятного проживания: удобные кровати, телевизор, ванную комнату и бесплатный Wi-fi. Мы предлагаем доступные цены на проживание, не принося при этом ущерба сервису. Гостиница "Мечта+" - идеальное место для тех, кто ищет комфорт и экономию.</p>
+    </div>
+    <div class="map container d-flex justify-content-center">
+        <div id="map" style="width: 1360px; height: 400px"></div>
+    </div>
+    <div class="d-flex">
+        <div>
+            <img src="{% static 'image/tri2.png' %}" alt="" class="normzer">
+        </div>
+        <div class="ms-auto">
+            <img src="{% static 'image/tri2.png' %}" alt="" class="zerzer">
+        </div>
+    </div>
+</section>
+
+<section class="number" id="number">
+    <div class="num container">
+        <h3>НОМЕРА</h3>
+        <div class="block1 wow animate__animated animate__bounceInLeft d-flex justify-content-start row align-items-center mb-5">
+            <div class="photo col-lg-7 col-sm-12">
+                <img src="{% static 'image/1.jpg' %}" alt="1" class="img-fluid">
+            </div>
+            <div class="text col-lg-4 col-sm-12">
+                <h3>Койко-место</h3>
+                <p>600₽</p>
+                <div class="butn">
+                    <button>Подробнее</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="numr container">
+        <div class="block1 wow animate__animated animate__bounceInLeft d-flex justify-content-start row align-items-center mb-5">
+            <div class="photo col-lg-7 col-sm-12">
+                <img src="{% static 'image/2.jpg' %}" alt="1" class="img-fluid">
+            </div>
+            <div class="text col-lg-4 col-sm-12 text-align-sm-start">
+                <h3>Односпальный</h3>
+                <p>1900₽</p>
+                <div class="butn">
+                    <button>Подробнее</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="num container">
+        <div class="block1 wow animate__animated animate__bounceInLeft d-flex justify-content-start row align-items-center mb-5">
+            <div class="photo col-lg-7 col-sm-12">
+                <img src="{% static 'image/3.jpg' %}" alt="1" class="img-fluid">
+            </div>
+            <div class="text col-lg-4 col-sm-12">
+                <h3>Двуспальный</h3>
+                <p>2200₽</p>
+                <div class="butn">
+                    <button>Подробнее</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="numr container">
+        <div class="block1 wow animate__animated animate__bounceInLeft d-flex justify-content-start row align-items-center mb-5">
+            <div class="photo col-lg-7 col-sm-12">
+                <img src="{% static 'image/5.jpg' %}" alt="1" class="img-fluid">
+            </div>
+            <div class="text col-lg-4 col-sm-12">
+                <h3>Стандарт</h3>
+                <p>2200₽</p>
+                <div class="butn">
+                    <button>Подробнее</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="num container">
+        <div class="block1 wow animate__animated animate__bounceInLeft d-flex justify-content-start row align-items-center mb-5">
+            <div class="photo col-lg-7 col-sm-12">
+                <img src="{% static 'image/4.jpg' %}" alt="1" class="img-fluid">
+            </div>
+            <div class="text col-lg-4 col-sm-12">
+                <h3>Улучшенный</h3>
+                <p>2500₽</p>
+                <div class="butn">
+                    <button>Подробнее</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex">
+        <div>
+            <img src="{% static 'image/tri2.png' %}" alt="" class="normzer">
+        </div>
+        <div class="ms-auto">
+            <img src="{% static 'image/tri2.png' %}" alt="" class="zerzer">
+        </div>
+    </div>
+</section>
+
+<section class="otzivi" id="otzivi">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="car container carousel-inner d-flex">
+          <div class="carousel-item active" data-bs-interval="10000" >
+            <div class="carousel-caption">
+                <h5>Антон</h5>
+                <p>Бронировал отель во время командировки, он подходил по моему бюджету. Условия приемлемые, в принципе все ожидания оправданы. В номере чисто, есть вся необходимая мебель. Кровать удобная, постельное белье чистое. Интернет работал стабильно. Не было никаких проблем с горячей водой.</p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <div class="carousel-caption">
+                <h5>Елена</h5>
+                <p>Неплохое место для отдыха. Нам все понравилось. В этом городе были впервые, впечатление о Городе ничего не испортило. В отеле было уютно и чисто. Персонал был отзывчивый, всегда любезно отвечали на все мои вопросы. Нареканий и минусов нет.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-caption">
+                <h5>Марина</h5>
+                <p>Очень хорошая гостиница. Советую, если вы в Хабаровске и нуждаетесь в хорошем отдыхе. Тут точно ничего не помешает сну и комфортному досугу. Приеду сюда снова, очень долго искала недорогое, но комфортное место, так как часто бываю в городе по командировочным делам. Тем более, что расположение для меня удобное.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-caption">
+                <h5>Зинаида</h5>
+                <p>Нормальный отель, который мне был нужен на пару дней во время деловой поездки. Номер обычный, все было, что хотелось, выспался наплохо. Персонал хорошо работал. Для пары дней по такой цене – очень неплохо.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-caption">
+                    <h5>Евгений</h5>
+                    <p>Хороший вариант для любителей великолепных номеров, с прекрасным освещением и отличным видом из окна, в особенности в ночное время суток. Мне попался очень неплохой номер, который был просто идеально убран. Не было замечено даже малейших следов пыли. Замечательно.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Следующий</span>
+        </button>
+      </div>
+      <div class="d-flex">
+        <div>
+            <img src="{% static 'image/tri2.png' %}" alt="" class="normzer">
+        </div>
+        <div class="ms-auto">
+            <img src="{% static 'image/tri2.png' %}" alt="" class="zerzer">
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row flex-wrap justify-content-between">
+            <div class="zag col-12 col-lg-4">
+                <p class="text-sm-start">МЕЧТА+</p>
+            </div>
+            <div class="phone col-12 col-lg-4 d-lg-flex justify-content-center">
+                <div>
+                    <p>+7 (4212) 20-14-14</p>
+
+                    <p>+7 (4212) 31-11-11</p>
+                </div>
+            </div>
+            <div class="phone col-12 col-lg-4 d-lg-flex justify-content-center">
+                <div>
+                    <a href="{% url 'case'  %}" class="coli">Открыть кейс</a>
+                </div>
+            </div>
+            <div class="mail ms-auto col-12 col-lg-4 d-lg-flex justify-content-center">
+                <div>
+                    <p>mechta_plus@list.ru</p>
+                    <p>Г. Хабаровск, ул. Суворова, д. 73А</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% endblock %}

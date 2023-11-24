@@ -1,0 +1,21 @@
+{% extends 'registration/shablon.html' %}
+{% load static %}
+{% block title %}Регистрация{% endblock title %}
+
+{% block content %}
+
+<section class="container">
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            <form method="post">
+                {% csrf_token %}
+                {% for f in  form%}
+                <p><label class="form-label text-start" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+                <div class="form-error">{{ f.errors }}</div>
+                {% endfor %}
+                <button type="submit" class="button">Регистрация</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

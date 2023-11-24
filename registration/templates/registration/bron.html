@@ -1,0 +1,43 @@
+{% extends 'registration/shablon.html' %}
+{% load static %}
+{% block title %}Товары{% endblock %}
+{% block content %}
+
+<div class="container">
+  <nav class="navbar navbar-light">
+    <div class="container-fluid justify-content-center">
+      <form id="search-form" class="d-flex">
+        <input id="search-query" type="text" name="search_query" placeholder="Search">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+      <div class="navbar-nav">
+        <li class="nav-item dropdown">
+            <p class="p-desc">Категории</p>
+            <select class="prods-selector">
+                <option class="prods-option">Всё</option>
+                <option class="prods-option">Линейки</option>
+                <option class="prods-option">Книги</option>
+                <option class="prods-option">Ручки</option>
+            </select>
+        </li>
+      </div>
+  </nav>
+  <div id="product-list" class="row flex-wrap justify-content-lg-between">
+    {% for product in products %}
+    <div class="prod col-12 col-lg-4">
+      <div class="card">
+        <img src="{{ product.pict.url }}" alt="{{ product.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.desc }}</p>
+          <p class="card-text">{{ product.price }}</p>
+          <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary">В корзину</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

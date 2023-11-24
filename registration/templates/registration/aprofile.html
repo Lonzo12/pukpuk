@@ -1,0 +1,20 @@
+{% extends 'registration/shablon.html' %}
+{% load static %}
+{% block title %}{{title}}{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+        <h2 class="col" href="{% url 'profile' %}">Добро пожаловать, администратор! {{user.username}}</h2>
+        <img src="{{ user.profile.avatar.url }}" alt="{{ photo.title }}" style="width: 70px">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row justify-content-between">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" class="bfb">Добавить</button>
+        </form>
+</div>
+
+
+{% endblock %}
