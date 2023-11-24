@@ -1,0 +1,24 @@
+{% extends 'registration/shablon.html' %}
+{% load static %}
+{% block title %}Кейсы{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <div class="row flex-wrap justify-content-lg-between">
+            {% for case in cases %}
+                <div class="col-12 col-lg-4">
+                    <div class="card">
+                        <img src="{{ case.image.url }}" alt="{{ case.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ case.name }}</h5>
+                            <p class="card-text">{{ case.desc }}</p>
+                            <p class="card-text">{{ case.price }}</p>
+                            <a href="{% url 'open_case' case.id %}" class="btn btn-primary">Открыть</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

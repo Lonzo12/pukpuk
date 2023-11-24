@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Открытие кейса</title>
+    <style>
+        .items-container {
+            display: flex;
+            overflow-x: hidden;
+            white-space: nowrap;
+            animation: scroll 5s linear;
+        }
+        .item {
+            margin-right: 20px;
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ case.name }}</h1>
+    <p>{{ case.description }}</p>
+    <p>Цена: {{ case.price }}</p>
+    <img src="{{ case.image.url }}" alt="{{ case.name }}">
+
+    <h2>Случайный предмет:</h2>
+    <p id="random-item-name">{{ random_item.name }}</p>
+    <p>{{ random_item.description }}</p>
+    <p>Цена: {{ random_item.price }}</p>
+    <img src="{{ random_item.image.url }}" alt="{{ random_item.name }}">
+
+    <h2>Другие предметы в кейсе:</h2>
+    <div class="items-container">
+        {% for item in case.item_set.all %}
+            <div class="item">
+                <p>{{ item.name }}</p>
+                <img src="{{ item.image.url }}" alt="{{ item.name }}">
+            </div>
+        {% endfor %}
+    </div>
+    <button id="open-case-button">Открыть кейс</button>
+
+    <script>
+        var itemsContainer = document.querySelector('.items-container');
+        var openCaseButton = document.querySelector('#open-case-button');
+        var randomItemName = document.querySelector('#random-item-name');
+
+        openCaseButton.addEventListener('click', function() {
+            // Остановить текущую анимацию прокрутки
+            itemsContainer.style.animationPlayState = 'paused';
+
+            // Получить случайный предмет из списка
+            var items = document.querySelectorAll('.item');
+            var randomIndex = Math.floor(Math.random() * items.length);
+            var randomItem = items[randomIndex];
+
+            // Прокрутить список до случайного предмета
+            var containerRect = itemsContainer.getBoundingClientRect();
+            var itemRect = randomItem.getBoundingClientRect();
+            var scrollAmount = itemRect.left - containerRect.left - (containerRect.width - itemRect.width) / 2;
+            itemsContainer.scrollTo({left: scrollAmount, behavior: 'smooth'});
+
+            // Выделить случайный предмет рамкой
+            randomItem.style.border = '2px solid red';
+            randomItemName.textContent = randomItem.querySelector('p').textContent;
+
+            // Убрать кнопку после открытия кейса
+            openCaseButton.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
